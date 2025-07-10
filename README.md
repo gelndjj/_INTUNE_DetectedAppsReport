@@ -56,3 +56,23 @@ DetectedApps_Report_YYYYMMDD_HHmm.csv
 
 Supports up to 1000+ devices using batched queries of 20 devices per round. Execution time will vary depending on number of devices and apps.
 
+---
+
+## 🔧 Configuration Runbook (Automation Account)
+
+```pwsh
+Runbook_Template-DetectedAppsReport.ps1
+```
+Before using this script:
+
+1. Replace `<YourTenant>.onmicrosoft.com` with your actual tenant domain.
+2. Replace the SharePoint URL:
+   - `https://<YourSharePointSite>.sharepoint.com/sites/<YourSiteName>`
+3. Ensure your Azure Automation Account has these modules:
+   - `GraphAuthentication`
+   - `PnP.PowerShell`
+4. Assign the following roles to the Managed Identity:
+   - **Intune Administrator**
+   - **Contributor** on the SharePoint site
+
+---
